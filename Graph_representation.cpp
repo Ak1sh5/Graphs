@@ -1,4 +1,5 @@
- #include<bits/stdc++.h>
+ //We use adjaceny list instead of adjaceny matrix since adjaceny matrix takes a lot of space
+#include<bits/stdc++.h>
 
 using namespace std;
 class Solution{
