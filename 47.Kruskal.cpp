@@ -1,6 +1,6 @@
 //It is used to find mst 
-//TC:O(V+E) + O(MlogM) +M*4*alpha*2
-//SC:O(V)
+//TC:O(V+E) + O(MlogM) +M*4*alpha*2    here m is edges
+//SC:O(M)
 
 class Solution
 
