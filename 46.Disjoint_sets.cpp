@@ -1,6 +1,6 @@
 //TC: of union and find parent is O(4 alpha) which can be said as constant 
 //Why do we coonect small to large always is because it takes less time to traverse compared to the other scenario.To minimize the time taken to find parent as much as //possible.
-//Rank cant be reduced since the right/left side still might have other nodes, so its rank not height so it is kept same not reduced.
+//Rank cant be reduced since we are not sure ,the right/left side still might have other nodes, so it is called rank not height since it cant be reduced.
 //We can even implement union by size which keeps track of size since after finding parent rank gets distorted it also takes 4 alpha time complexity.
 
 #include <bits/stdc++.h>
