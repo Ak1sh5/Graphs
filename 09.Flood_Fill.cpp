@@ -55,6 +55,7 @@ int main(){
 	
 	return 0;
 }
+
 //Output:
 
 //2 2 2
@@ -67,3 +68,52 @@ int main(){
 //Space Complexity: O(N x M) + O(N x M)
 
 //O(N x M) for copied input array and recursive stack space takes up N x M locations at max. 
+
+
+
+
+//BFS apporach
+public:
+    vector<vector<int>> floodFill(vector<vector<int>>& image, 
+    int sr, int sc, int newColor) {
+        
+        int n=image.size();
+        int m=image[0].size();
+        
+        int iniColor=image[sr][sc];
+
+        
+        vector<vector<int>>ans=image;
+        
+        ans[sr][sc]=newColor;
+        
+        queue<pair<int,int>>q;
+        
+        int delRow[] = {-1, 0, +1, 0};
+        int delCol[] = {0, +1, 0, -1}; 
+        
+        q.push({sr,sc});
+        
+        while(!q.empty()){
+            
+            int row=q.front().first;
+            int col=q.front().second;
+            q.pop();
+            
+            for(int i=0;i<4;i++)
+            {
+                int nrow=delRow[i]+row;
+                int ncol=delCol[i]+col;
+                
+                if(nrow>=0 && nrow <n && ncol>=0 && ncol<m && image[nrow][ncol]==iniColor && ans[nrow][ncol]!=newColor){
+                    
+                    ans[nrow][ncol]=newColor;
+                    q.push({nrow,ncol});
+                }
+                
+            }
+            
+        }
+        return ans;
+    }
+};
